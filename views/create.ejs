@@ -1,0 +1,49 @@
+<%- include("partials/header",{ Style: "create" }) %>
+
+    <%- include("partials/navbar",{ Status: Name , Condition: Condition}) %>
+    
+    <div class="container">
+        <form action="/create/type" method="post">
+            <input type="radio" name="toq" id="theory" value="theory">
+            <input type="radio" name="toq" id="mcq" value="mcq">
+            <input type="radio" name="toq" id="fitb" value="fitb">
+            <button type="submit">Submit</button>
+        </form>
+        <form action="/create" method="post">
+            <select name="se" id="">
+                <option value="">Select the subject</option>
+                <option value="PPS using C">PPS using C</option>
+                <option value="Data Structures using C++">Data Structures using C++</option>
+                <option value="OOPs using C++">OOPs using C++</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+                <option value="FLAT-Formal Languages and Automata Theory">FLAT-Formal Languages
+                    and
+                    Automata Theory</option>
+                <option value="Complier Designing">Complier Designing</option>
+                <option value="Computer Networks">Computer Networks</option>
+                <option value="Cloud Computing">Cloud Computing</option>
+                <option value="IOT-Internet Of Things">IOT-Internet Of Things</option>
+                <option value="Cryptography and Network Security">Cryptography and Network
+                    Security
+                </option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="UML and Design Patterns">UML and Design Patterns</option>
+                <option value="DAA-Design Analysis Algorithms">DAA-Design Analysis Algorithms
+                </option>
+                <option value="AI-Artificial Intelligance">AI-Artificial Intelligance</option>
+            </select>
+            <% if(TOQ === 'theory'){ %> 
+                <textarea name="question" id="" cols="30" rows="10"></textarea>
+            <% } else if(TOQ === 'mcq'){ %>
+                <textarea name="question" id="" cols="30" rows="10"></textarea>
+                <input type="text" name="opt1" id="">
+                <input type="text" name="opt2" id="">
+                <input type="text" name="opt3" id="">
+                <input type="text" name="opt4" id="">
+            <% } %>  
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+<%- include("partials/footer") %>

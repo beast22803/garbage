@@ -1,0 +1,50 @@
+<%- include("partials/header",{ Style: "styles" }) %>
+
+    <%- include("partials/navbar",{ Status: "Login", Condition: false }) %>
+
+    <div style="background-color: #112D4E;padding: 9rem 30rem 9.6rem 30rem;">
+        <div class="container">
+            <div>
+                <h1>Login</h1>
+                <p class="su" style="color: red;"><%= Message %></p>
+                <form action="/login" method="post">
+                    <input type="email" name="email" id="" placeholder="Email" style="margin-bottom: 2.5rem;"><br>
+                    <input type="password" name="pass" id="pwd" placeholder="Password" style="margin-bottom: 2.5rem;">
+                    <img src="images/eye2.svg" alt="" srcset="" class="eye">
+                    <div class="su">
+                        <button class="signup" type="submit">Login</button>
+                    </div>
+                    <div class="su">
+                        Create an account,&nbsp;<a href="signup">click here</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var a = 0, b = 0;
+        document.querySelector(".eye").addEventListener("click", function () {
+            if (a === 0) {
+                document.querySelector("#pwd").setAttribute("type", "text");
+                document.querySelector(".eye").setAttribute("src", "images/eye.svg");
+                a = 1;
+            } else {
+                document.querySelector("#pwd").setAttribute("type", "password");
+                document.querySelector(".eye").setAttribute("src", "images/eye2.svg");
+                a = 0;
+            }
+        });
+        document.querySelector(".eye").addEventListener("click", function () {
+            if (b === 0) {
+                document.querySelector("#pwd1").setAttribute("type", "text");
+                document.querySelector(".eye").setAttribute("src", "images/eye.svg");
+                b = 1;
+            } else {
+                document.querySelector("#pwd1").setAttribute("type", "password");
+                document.querySelector(".eye").setAttribute("src", "images/eye2.svg");
+                b = 0;
+            }
+        });
+    </script>
+
+<%- include("partials/footer") %>

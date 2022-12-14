@@ -1,0 +1,27 @@
+.logo{
+    height: 3.8rem;
+    margin: .2rem 1rem;
+    border-radius: .4rem;
+}
+.navbar-brand{
+    font-size: 2.1rem;
+    color: #112D4E;
+    font-family: 'Offside', cursive;
+}
+.navbar-nav{
+    font-family: 'Offside', cursive;
+    font-size: 1.3rem;
+}
+
+
+
+@media (max-width: 480px) {
+    .logo{
+        height: 2.5rem;
+        margin: 0rem .3rem;
+        border-radius: .3rem;
+    }
+    .navbar-brand{
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,10 @@
+<%- include("partials/header",{ Style: "styles" }) %>
+
+    <%- include("partials/navbar",{ Status: Name , Condition: Condition}) %>
+        <% if(Condition){ %> 
+            <a href="create" class="create su signup anc">Create</a>
+        <% }else{ %> 
+            <a href="#" class="create su signup anc">Create</a>
+        <% } %> 
+
+<%- include("partials/footer") %>

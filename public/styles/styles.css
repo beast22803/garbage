@@ -1,0 +1,119 @@
+.logo{
+    height: 3.8rem;
+    margin: .2rem 1rem;
+    border-radius: .4rem;
+}
+.navbar-brand{
+    font-size: 2.1rem;
+    color: #112D4E;
+    font-family: 'Offside', cursive;
+}
+.navbar-nav{
+    font-family: 'Offside', cursive;
+    font-size: 1.3rem;
+}
+.container{
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    color: #112D4E;
+    border: .28rem solid #3F72AF;
+    border-radius: .7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1,.su {
+    margin: 1.5rem;
+    display: flex;
+    justify-content: center;
+    height: inherit;
+    align-items: center;
+    color: #112D4E;
+}
+
+select,
+input {
+    margin: 1rem .1rem 1rem .1rem;
+    background-color: white;
+    border: none;
+    width: 22rem;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #3F72AF;
+}
+
+select {
+    text-align: center;
+}
+
+td {
+    padding: 0rem .4rem 0rem .4rem;
+    font-size: 1.1rem;
+}
+
+img {
+    margin: 1rem;
+    height: 10rem;
+}
+
+::placeholder {
+    color: #112d4e;
+}
+
+.signup {
+    border: 1px solid #112D4E;
+    border-radius: .3rem;
+    font-size: 1.4rem;
+    width: 15rem;
+    background-color: white;
+}
+
+.signup:hover{
+    background-color: #112D4E;
+    color: white;
+    border-color: #112D4E;
+}
+
+input,
+select:focus {
+    outline: none;
+}
+
+p{
+    color: red;
+    margin: 0px;
+    padding: 0px;
+    font-size: .8rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.pad{
+    padding: .000000001rem;
+}
+
+.eye{
+    height: 1rem;
+}
+
+.anc{
+    text-decoration: none;
+    color: #112D4E;
+}
+
+.anc:hover{
+    color: white;
+}
+
+input[type=checkbox]{
+    padding: 0rem;
+}
+
+@media (max-width: 480px) {
+    .logo{
+        height: 2.5rem;
+        margin: 0rem .3rem;
+        border-radius: .3rem;
+    }
+    .navbar-brand{
+        font-size: 1.2rem;
+    }
+}

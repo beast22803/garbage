@@ -1,0 +1,141 @@
+<%- include("partials/header",{ Style: "styles" }) %>
+
+    <%- include("partials/navbar",{ Status: "Sing Up", Condition: false }) %>
+
+        <div style="background-color: #112D4E;padding: 4.952rem 10rem;">
+            <div class="container">
+                <div>
+                    <h1>Create Your account</h1>
+                    <p></p>
+                    <form action="/signup" method="post">
+                        <table>
+                            <tr>
+                                <td>Name</td>
+                                <td>:</td>
+                                <td><input type="text" name="fn" id="" placeholder="First Name"></td>
+                                <td><input type="text" name="ln" id="" placeholder="Last Name"></td>
+                            </tr>
+                            <tr>
+                                <td>Contact Details</td>
+                                <td>:</td>
+                                <td><input type="email" name="email" id="" placeholder="Email Addres"></td>
+                                <td><input type="text" name="pn" id="" placeholder="Phone Number"></td>
+                            </tr>
+                            <tr>
+                                <td>Password</td>
+                                <td>:</td>
+                                <td><input type="password" name="pwd" id="pwd" placeholder="Password"></td>
+                                <td><input type="password" name="pwd2" id="pwd1" placeholder="Confirm Password"></td>
+                                <td><img src="images/eye2.svg" alt="" srcset="" class="eye"></td>
+                            </tr>
+                            <tr>
+                                <td>Your College</td>
+                                <td>:</td>
+                                <td>
+                                    <select name="clg" id="">
+                                        <option value="">Select College</option>
+                                        <option value="KMIT">Keshav Memorial Institute of Technology</option>
+                                        <option value="NGIT">Neil Gogte Institute of Technology</option>
+                                        <option value="KMEC">Keshav Memorial Engineering College</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Designation</td>
+                                <td>:</td>
+                                <td>
+                                    <select name="dg" id="">
+                                        <option value="">Select Designation</option>
+                                        <option value="Assistant Professor">Assistant Professor</option>
+                                        <option value="Assosiate Professor">Assosiate Professor</option>
+                                        <option value="Professor">Professor</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Expertise</td>
+                                <td>:</td>
+                                <td>
+                                    <select name="se" id="">
+                                        <option value="">Select your expertise</option>
+                                        <option value="PPS using C">PPS using C</option>
+                                        <option value="Data Structures using C++">Data Structures using C++</option>
+                                        <option value="OOPs using C++">OOPs using C++</option>
+                                        <option value="Java">Java</option>
+                                        <option value="Python">Python</option>
+                                        <option value="FLAT-Formal Languages and Automata Theory">FLAT-Formal Languages
+                                            and
+                                            Automata Theory</option>
+                                        <option value="Complier Designing">Complier Designing</option>
+                                        <option value="Computer Networks">Computer Networks</option>
+                                        <option value="Cloud Computing">Cloud Computing</option>
+                                        <option value="IOT-Internet Of Things">IOT-Internet Of Things</option>
+                                        <option value="Cryptography and Network Security">Cryptography and Network
+                                            Security
+                                        </option>
+                                        <option value="Machine Learning">Machine Learning</option>
+                                        <option value="UML and Design Patterns">UML and Design Patterns</option>
+                                        <option value="DAA-Design Analysis Algorithms">DAA-Design Analysis Algorithms
+                                        </option>
+                                        <option value="AI-Artificial Intelligance">AI-Artificial Intelligance</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="su"><button class="signup" type="submit" onclick="equal(document.form1.pwd , document.form1.pwd2)">Sign Up</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            var a = 0, b = 0;
+            document.querySelector(".eye").addEventListener("click", function () {
+                if (a === 0) {
+                    document.querySelector("#pwd").setAttribute("type", "text");
+                    document.querySelector(".eye").setAttribute("src", "images/eye.svg");
+                    a = 1;
+                } else {
+                    document.querySelector("#pwd").setAttribute("type", "password");
+                    document.querySelector(".eye").setAttribute("src", "images/eye2.svg");
+                    a = 0;
+                }
+            });
+            function equal(pwd, pwd2) {
+                var a = pwd.value, b = pwd2.value;
+                if (a != b) {
+                    document.querySelector("p").innerHTML = "Plz check ur password";
+                    alert("Plz check ur password");
+                    console.log("Plz Check ur Password");
+                }
+            }
+            document.querySelector(".eye").addEventListener("click", function () {
+                if (b === 0) {
+                    document.querySelector("#pwd1").setAttribute("type", "text");
+                    document.querySelector(".eye").setAttribute("src", "images/eye.svg");
+                    b = 1;
+                } else {
+                    document.querySelector("#pwd1").setAttribute("type", "password");
+                    document.querySelector(".eye").setAttribute("src", "images/eye2.svg");
+                    b = 0;
+                }
+            });
+            function CheckPassword(inputtxt) {
+                var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+                if (inputtxt.value.match(decimal)) {
+                    document.querySelector("p").innerHTML = 'Correct, try another...';
+                    return true;
+                }
+                else {
+                    document.querySelector("p").innerHTML = "Wrong.....";
+                    return false;
+                }
+            };
+            $("form").on("submit", function (e) {
+                e.preventDefault();
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+
+<%- include("partials/footer") %>
